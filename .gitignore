@@ -1,0 +1,10 @@
+*~
+
+# Lazarus
+*.lps
+backup
+lib
+
+# output
+*.exe
+3d_game/my_game
