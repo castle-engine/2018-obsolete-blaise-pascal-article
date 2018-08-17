@@ -1,11 +1,8 @@
 program my_game;
 
-uses CastleWindow;
+uses CastleWindow, GameInitialize;
 
-var
-  Window: TCastleWindow;
 begin
-  Window := TCastleWindow.Create(Application);
-  Window.OpenAndRun;
+  Application.MainWindow.OpenAndRun;
 end.
 

@@ -37,11 +37,16 @@
         <PackageName Value="castle_base"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="1">
+    <Units Count="2">
       <Unit0>
         <Filename Value="my_game.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
+      <Unit1>
+        <Filename Value="gameinitialize.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GameInitialize"/>
+      </Unit1>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
