@@ -5,4 +5,3 @@ uses CastleWindow, GameInitialize;
 begin
   Application.MainWindow.OpenAndRun;
 end.
-
