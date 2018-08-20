@@ -20,6 +20,7 @@ type
   public
     SoldierScene: TCastleScene;
     MoveDirection: Integer; //< Always 1 or -1
+    Dead: Boolean;
     constructor Create(AOwner: TComponent); override;
     procedure Update(const SecondsPassed: Single; var RemoveMe: TRemoveType); override;
   end;
@@ -43,6 +44,8 @@ const
 begin
   inherited;
 
+  if Dead then Exit;
+
   // We modify the Z coordinate, responsible for enemy going forward
   Translation := Translation +
     Vector3(0, 0, MoveDirection * SecondsPassed * MovingSpeed);
@@ -58,7 +61,23 @@ begin
 end;
 
 procedure WindowPress(Container: TUIContainer; const Event: TInputPressRelease);
+var
+  HitEnemy: TEnemy;
 begin
+  if Event.IsMouseButton(mbLeft) then
+  begin
+    if (Window.SceneManager.MouseRayHit <> nil) and
+       (Window.SceneManager.MouseRayHit.Count >= 2) and
+       (Window.SceneManager.MouseRayHit[1].Item is TEnemy) then
+    begin
+      HitEnemy := Window.SceneManager.MouseRayHit[1].Item as TEnemy;
+      HitEnemy.SoldierScene.PlayAnimation('die', false);
+      HitEnemy.SoldierScene.Pickable := false;
+      HitEnemy.SoldierScene.Collides := false;
+      HitEnemy.Dead := true;
+    end;
+  end;
+
   if Event.IsKey(CtrlM) then
     Window.SceneManager.WalkCamera.MouseLook :=
       not Window.SceneManager.WalkCamera.MouseLook;
