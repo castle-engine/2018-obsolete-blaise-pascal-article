@@ -45,6 +45,8 @@ begin
   Translation := Translation +
     Vector3(0, 0, MoveDirection * SecondsPassed * MovingSpeed);
 
+  Direction := Vector3(0, 0, MoveDirection);
+
   // Toggle MoveDirection between 1 and -1
   if Translation.Z > 5 then
     MoveDirection := -1
