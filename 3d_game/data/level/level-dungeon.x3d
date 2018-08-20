@@ -18,7 +18,7 @@
 		            skyAngle="1.57"
 		            />
 		<Transform DEF="Sun_001_TRANSFORM"
-		           translation="7.145881 63.516483 0.739933"
+		           translation="7.145881 48.557434 23.126305"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="-0.806071 -0.589485 -0.052512 0.918286"
 		           >
@@ -31,7 +31,7 @@
 			                  />
 		</Transform>
 		<Transform DEF="Point_001_TRANSFORM"
-		           translation="20.820532 16.420340 -24.121340"
+		           translation="20.820532 1.461290 -1.734968"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -44,7 +44,7 @@
 			            />
 		</Transform>
 		<Transform DEF="Point_TRANSFORM"
-		           translation="20.727432 16.420340 -19.838812"
+		           translation="20.727432 1.461290 2.547560"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -57,7 +57,7 @@
 			            />
 		</Transform>
 		<Transform DEF="caslte-wall-w-torch-2_004_TRANSFORM"
-		           translation="-28.782583 15.000000 -18.999926"
+		           translation="-28.782583 0.040951 3.386446"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="-0.577350 0.577350 0.577350 2.094395"
 		           >
@@ -183,7 +183,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="caslte-wall-w-torch-2_003_TRANSFORM"
-		           translation="-17.500000 15.000000 -19.400000"
+		           translation="-17.500000 0.040951 2.986372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -273,7 +273,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_008_TRANSFORM"
-		           translation="10.000000 14.955244 -22.000000"
+		           translation="10.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -370,7 +370,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_017_TRANSFORM"
-		           translation="-18.000000 14.955244 -22.000000"
+		           translation="-18.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -423,7 +423,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_016_TRANSFORM"
-		           translation="-10.000000 14.955244 -22.000000"
+		           translation="-10.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -476,7 +476,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_014_TRANSFORM"
-		           translation="-2.000000 14.955244 -22.000000"
+		           translation="-2.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -529,7 +529,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_012_TRANSFORM"
-		           translation="6.000000 14.955244 -22.000000"
+		           translation="6.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -582,7 +582,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_011_TRANSFORM"
-		           translation="0.000000 14.955244 -22.000000"
+		           translation="-0.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -680,7 +680,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_010_TRANSFORM"
-		           translation="-18.000000 14.955244 -22.000000"
+		           translation="-18.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -771,7 +771,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_009_TRANSFORM"
-		           translation="-18.000000 14.955244 -22.000000"
+		           translation="-18.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -824,7 +824,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_007_TRANSFORM"
-		           translation="10.000000 14.955244 -22.000000"
+		           translation="10.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -868,7 +868,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_006_TRANSFORM"
-		           translation="10.000000 14.955244 -22.000000"
+		           translation="10.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -912,7 +912,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_005_TRANSFORM"
-		           translation="10.000000 14.955244 -22.000000"
+		           translation="10.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -947,7 +947,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_004_TRANSFORM"
-		           translation="10.000000 14.955244 -22.000000"
+		           translation="10.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -1063,7 +1063,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_002_TRANSFORM"
-		           translation="10.000000 14.955244 -22.000000"
+		           translation="10.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -1106,7 +1106,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_003_TRANSFORM"
-		           translation="10.000000 14.455244 -22.000000"
+		           translation="10.000000 -0.503805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -1150,7 +1150,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile-2-1_001_TRANSFORM"
-		           translation="10.000002 14.955245 -22.000000"
+		           translation="10.000002 -0.003804 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -1184,12 +1184,12 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="caslte-wall-w-torch-2_002_TRANSFORM"
-		           translation="-27.500000 15.000000 -24.400000"
+		           translation="-27.500000 0.040951 -2.013628"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="-1.000000 -0.000000 -0.000000 1.570796"
 		           >
 			<Transform DEF="caslte-wall-w-torch-2_002_ifs_TRANSFORM"
-			           translation="-0.000001 0.000001 0.000000"
+			           translation="-0.000001 0.000000 -0.000000"
 			           scale="1.000000 1.000000 1.000000"
 			           rotation="0.000000 0.000000 0.000000 0.000000"
 			           >
@@ -1274,7 +1274,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="caslte-wall-w-torch-2_001_TRANSFORM"
-		           translation="-17.500000 15.000000 -19.400000"
+		           translation="-17.500000 0.040951 2.986372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -1364,12 +1364,12 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="edge-column-3_001_TRANSFORM"
-		           translation="-16.500000 15.000000 -20.600000"
+		           translation="-16.500000 0.040951 1.786371"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="-0.577350 -0.577350 -0.577350 2.094395"
 		           >
 			<Transform DEF="edge-column-3_001_ifs_TRANSFORM"
-			           translation="-0.000001 0.000001 0.000000"
+			           translation="-0.000000 -0.000000 0.000000"
 			           scale="1.000000 1.000000 1.000000"
 			           rotation="1.000000 0.000000 0.000000 0.000000"
 			           >
@@ -1417,7 +1417,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="ground-tile_033_TRANSFORM"
-		           translation="10.000000 14.955244 -22.000000"
+		           translation="10.000000 -0.003805 0.386372"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -1554,12 +1554,12 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="Armature_switch_001_TRANSFORM"
-		           translation="19.000000 15.070150 -15.041328"
+		           translation="19.000000 0.111101 7.345043"
 		           scale="0.336577 0.336577 0.336577"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
 			<Transform DEF="switch_001_TRANSFORM"
-			           translation="0.000000 0.122795 -0.341396"
+			           translation="0.000000 0.122791 -0.341395"
 			           scale="2.971085 2.971086 2.971086"
 			           rotation="1.000000 0.000000 0.000000 0.000000"
 			           >
@@ -1604,12 +1604,12 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="edge-column-3_TRANSFORM"
-		           translation="-16.600000 15.000000 -24.500000"
+		           translation="-16.600000 0.040951 -2.113628"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="-0.577350 -0.577350 -0.577350 2.094395"
 		           >
 			<Transform DEF="edge-column-3_ifs_TRANSFORM"
-			           translation="-0.000001 -0.000001 0.000000"
+			           translation="-0.000000 0.000000 0.000000"
 			           scale="1.000000 1.000000 1.000000"
 			           rotation="1.000000 0.000000 0.000000 0.000000"
 			           >
@@ -1657,7 +1657,7 @@
 			</Transform>
 		</Transform>
 		<Transform DEF="Sun_TRANSFORM"
-		           translation="22.160797 63.516483 -3.550042"
+		           translation="22.160797 48.557434 18.836330"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="-0.040709 0.926908 0.373075 2.531996"
 		           >
