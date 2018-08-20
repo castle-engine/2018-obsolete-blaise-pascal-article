@@ -1,3 +1,4 @@
+{ Example cross-platform 3D game using Castle Game Engine. }
 unit GameInitialize;
 
 interface
@@ -5,12 +6,14 @@ interface
 implementation
 
 uses Classes,
-  CastleWindow, CastleScene, CastleFilesUtils, CastleKeysMouse,
-  CastleVectors, CastleCameras, CastleStringUtils, CastleTransform;
+  CastleWindow, CastleScene, CastleFilesUtils, CastleKeysMouse, CastleUtils,
+  CastleVectors, CastleCameras, CastleStringUtils, CastleTransform,
+  CastleApplicationProperties, CastleLog, CastleTimeUtils;
 
 var
   Window: TCastleWindow;
   LevelScene: TCastleScene;
+  SoldierSceneTemplate: TCastleScene;
 
 type
   TEnemy = class(TCastleTransform)
@@ -27,8 +30,7 @@ begin
 
   MoveDirection := -1;
 
-  SoldierScene := TCastleScene.Create(Application);
-  SoldierScene.Load(ApplicationData('character/soldier1.castle-anim-frames'));
+  SoldierScene := SoldierSceneTemplate.Clone(Self);
   SoldierScene.ProcessEvents := true;
   SoldierScene.PlayAnimation('walk', true);
 
@@ -65,11 +67,24 @@ end;
 procedure ApplicationInitialize;
 var
   Enemy: TEnemy;
+  I: Integer;
+  TimeStart: TProcessTimerResult;
 begin
   Window.OnPress := @WindowPress;
 
-  Enemy := TEnemy.Create(Application);
-  Window.SceneManager.Items.Add(Enemy);
+  TimeStart := ProcessTimer;
+
+  SoldierSceneTemplate := TCastleScene.Create(Application);
+  SoldierSceneTemplate.Load(ApplicationData('character/soldier1.castle-anim-frames'));
+
+  for I := 0 to 9 do
+  begin
+    Enemy := TEnemy.Create(Application);
+    Enemy.Translation := Vector3(-5 + I * 1.5, 0, RandomFloatRange(-5, 5));
+    Window.SceneManager.Items.Add(Enemy);
+  end;
+
+  WritelnLog('Loading enemies took %f seconds', [TimeStart.ElapsedTime]);
 
   LevelScene := TCastleScene.Create(Application);
   LevelScene.Load(ApplicationData('level/level-dungeon.x3d'));
@@ -90,6 +105,9 @@ begin
 end;
 
 initialization
+  ApplicationProperties.ApplicationName := 'my_game';
+  InitializeLog;
+
   Window := TCastleWindow.Create(Application);
   Application.MainWindow := Window;
   Application.OnInitialize := @ApplicationInitialize;
