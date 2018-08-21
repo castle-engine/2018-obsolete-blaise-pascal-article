@@ -118,8 +118,8 @@ begin
   Window.SceneManager.NavigationType := ntWalk;
   Window.SceneManager.WalkCamera.MoveSpeed := 10;
   Window.SceneManager.WalkCamera.SetView(
-    Vector3(9.69, 1.72, 8.12), // position
-    Vector3(0.87, 0.00, -0.49), // direction
+    Vector3(21.15, 1.71, 10.59), // position
+    Vector3(-0.73, 0.00, -0.68), // direction
     Vector3(0.00, 1.00, 0.00), // up (current)
     Vector3(0.00, 1.00, 0.00) // gravity up
   );
