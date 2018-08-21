@@ -8,7 +8,7 @@ implementation
 uses Classes,
   CastleWindow, CastleScene, CastleFilesUtils, CastleKeysMouse, CastleUtils,
   CastleVectors, CastleCameras, CastleStringUtils, CastleTransform,
-  CastleApplicationProperties, CastleLog, CastleTimeUtils;
+  CastleApplicationProperties, CastleLog, CastleTimeUtils, CastleSoundEngine;
 
 var
   Window: TCastleWindow;
@@ -66,6 +66,8 @@ var
 begin
   if Event.IsMouseButton(mbLeft) then
   begin
+    SoundEngine.Sound(SoundEngine.SoundFromName('shoot_sound'));
+
     if (Window.SceneManager.MouseRayHit <> nil) and
        (Window.SceneManager.MouseRayHit.Count >= 2) and
        (Window.SceneManager.MouseRayHit[1].Item is TEnemy) then
@@ -121,6 +123,9 @@ begin
     Vector3(0.00, 1.00, 0.00), // up (current)
     Vector3(0.00, 1.00, 0.00) // gravity up
   );
+
+  SoundEngine.RepositoryURL := ApplicationData('audio/index.xml');
+  SoundEngine.MusicPlayer.Sound := SoundEngine.SoundFromName('dark_music');
 end;
 
 initialization
