@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project name="my_game" standalone_source="my_game.lpr" game_units="GameInitilize">
+<project name="my_game"
+  standalone_source="my_game.lpr"
+  game_units="GameInitialize">
+  <!--
+    Using "integrated" project type will automatically
+    include sound libraries (OpenAL, OggVorbis).
+  -->
+  <android project_type="integrated"/>
 </project>

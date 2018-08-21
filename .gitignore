@@ -10,3 +10,4 @@ lib
 *.exe
 3d_game/my_game
 castle-engine-output
+*.apk
