@@ -8,19 +8,18 @@ article about Castle Game Engine in
 
 # Compiling
 
-To compile the demo, you will need Castle Game Engine from
-https://castle-engine.io/ .
+To compile the demo, you will need [Castle Game Engine](https://castle-engine.io/).
 You can download the stable version and install it following
-https://castle-engine.io/documentation.php or the instructions in
+[Castle Game Engine documentation](https://castle-engine.io/documentation.php) or the instructions in
 the _Blaise Pascal Magazine_ article.
-You can also use the engine development version from https://github.com/castle-engine/castle-engine/ .
+You can also use the [engine development version](https://github.com/castle-engine/castle-engine/).
 
 - `3d_game` is our primary demo.
   It uses `TCastleWindow` class and can be compiled also for the mobile platforms (Android, iOS).
 
     You can compile it using Lazarus (just open the lpi file inside)
-    or using Castle Game Engine build tool
-    ( https://github.com/castle-engine/castle-engine/wiki/Build-Tool ).
+    or using [Castle Game Engine build tool]
+    (https://github.com/castle-engine/castle-engine/wiki/Build-Tool).
 
 - `3d_game_alternative_using_castlecontrol` is an alternative version of the demo
   in which we use `TCastleControl` class inside a regular Lazarus LCL form.
