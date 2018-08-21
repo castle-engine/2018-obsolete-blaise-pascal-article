@@ -1,0 +1,21 @@
+object MainForm: TMainForm
+  Left = 601
+  Height = 589
+  Top = 213
+  Width = 962
+  Caption = 'MainForm'
+  ClientHeight = 589
+  ClientWidth = 962
+  DesignTimePPI = 140
+  OnCreate = FormCreate
+  LCLVersion = '1.8.0.6'
+  object CastleControl1: TCastleControl
+    Left = 0
+    Height = 589
+    Top = 0
+    Width = 962
+    Align = alClient
+    TabOrder = 0
+    OnPress = CastleControl1Press
+  end
+end
