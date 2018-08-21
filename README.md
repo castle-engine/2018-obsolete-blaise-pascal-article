@@ -18,8 +18,7 @@ You can also use the [engine development version](https://github.com/castle-engi
   It uses `TCastleWindow` class and can be compiled also for the mobile platforms (Android, iOS).
 
     You can compile it using Lazarus (just open the lpi file inside)
-    or using [Castle Game Engine build tool]
-    (https://github.com/castle-engine/castle-engine/wiki/Build-Tool).
+    or using [Castle Game Engine build tool](https://github.com/castle-engine/castle-engine/wiki/Build-Tool).
 
 - `3d_game_alternative_using_castlecontrol` is an alternative version of the demo
   in which we use `TCastleControl` class inside a regular Lazarus LCL form.
