@@ -33,7 +33,7 @@ begin
 
   SoldierScene := SoldierSceneTemplate.Clone(Self);
   SoldierScene.ProcessEvents := true;
-  SoldierScene.PlayAnimation('walk', true);
+  SoldierScene.PlayAnimation('walk', paForceLooping);
 
   Add(SoldierScene);
 end;
@@ -73,7 +73,7 @@ begin
        (Window.SceneManager.MouseRayHit[1].Item is TEnemy) then
     begin
       HitEnemy := Window.SceneManager.MouseRayHit[1].Item as TEnemy;
-      HitEnemy.SoldierScene.PlayAnimation('die', false);
+      HitEnemy.SoldierScene.PlayAnimation('die', paForceNotLooping);
       HitEnemy.SoldierScene.Pickable := false;
       HitEnemy.SoldierScene.Collides := false;
       HitEnemy.Dead := true;
