@@ -25,6 +25,9 @@ You can also use the engine development version from https://github.com/castle-e
   in which we use TCastleControl inside a regular Lazarus LCL form.
   You can compile it using Lazarus (just open the lpi file inside).
 
+Both versions can of course be compiled on "normal" desktop platforms supported
+by Castle Game Engine -- Linux, Windows, macOS etc.
+
 # Authors
 
 Copyright Michalis Kamburelis.
