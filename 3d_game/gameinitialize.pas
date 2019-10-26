@@ -13,7 +13,6 @@ uses Classes,
 var
   Window: TCastleWindow;
   LevelScene: TCastleScene;
-  SoldierSceneTemplate: TCastleScene;
 
 type
   TEnemy = class(TCastleTransform)
@@ -31,7 +30,12 @@ begin
 
   MoveDirection := -1;
 
-  SoldierScene := SoldierSceneTemplate.Clone(Self);
+  SoldierScene := TCastleScene.Create(Self);
+  { This loads castle-data:/character/soldier1.castle-anim-frames asset.
+    We use <warmup_cache> inside data/CastleSettings.xml to make
+    sure this asset is in cache, which means that actually the line below is very fast
+    (it does not load new files from disk). }
+  SoldierScene.URL := 'castle-data:/character/soldier1.castle-anim-frames';
   SoldierScene.ProcessEvents := true;
   SoldierScene.PlayAnimation('walk', true);
 
@@ -92,13 +96,10 @@ var
   TimeStart: TProcessTimerResult;
 begin
   Window.OnPress := @WindowPress;
-  
+
   Window.Container.LoadSettings('castle-data:/CastleSettings.xml');
 
   TimeStart := ProcessTimer;
-
-  SoldierSceneTemplate := TCastleScene.Create(Application);
-  SoldierSceneTemplate.Load('castle-data:/character/soldier1.castle-anim-frames');
 
   for I := 0 to 9 do
   begin
@@ -133,7 +134,7 @@ end;
 initialization
   ApplicationProperties.ApplicationName := 'my_game';
   InitializeLog;
-  
+
   Profiler.Enabled := true;
 
   Window := TCastleWindow.Create(Application);

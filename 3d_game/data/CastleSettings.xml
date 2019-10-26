@@ -5,4 +5,7 @@
     reference_width="1600"
     reference_height="900"
   />
+  <warmup_cache>
+    <scene url="castle-data:/character/soldier1.castle-anim-frames" />
+  </warmup_cache>
 </castle_settings>
