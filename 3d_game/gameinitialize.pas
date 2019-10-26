@@ -33,7 +33,7 @@ begin
 
   SoldierScene := SoldierSceneTemplate.Clone(Self);
   SoldierScene.ProcessEvents := true;
-  SoldierScene.PlayAnimation('walk', paForceLooping);
+  SoldierScene.PlayAnimation('walk', true);
 
   Add(SoldierScene);
 end;
@@ -73,7 +73,7 @@ begin
        (Window.SceneManager.MouseRayHit[1].Item is TEnemy) then
     begin
       HitEnemy := Window.SceneManager.MouseRayHit[1].Item as TEnemy;
-      HitEnemy.SoldierScene.PlayAnimation('die', paForceNotLooping);
+      HitEnemy.SoldierScene.PlayAnimation('die', false);
       HitEnemy.SoldierScene.Pickable := false;
       HitEnemy.SoldierScene.Collides := false;
       HitEnemy.Dead := true;
@@ -92,11 +92,13 @@ var
   TimeStart: TProcessTimerResult;
 begin
   Window.OnPress := @WindowPress;
+  
+  Window.Container.LoadSettings('castle-data:/CastleSettings.xml');
 
   TimeStart := ProcessTimer;
 
   SoldierSceneTemplate := TCastleScene.Create(Application);
-  SoldierSceneTemplate.Load(ApplicationData('character/soldier1.castle-anim-frames'));
+  SoldierSceneTemplate.Load('castle-data:/character/soldier1.castle-anim-frames');
 
   for I := 0 to 9 do
   begin
@@ -108,7 +110,7 @@ begin
   WritelnLog('Loading enemies took %f seconds', [TimeStart.ElapsedTime]);
 
   LevelScene := TCastleScene.Create(Application);
-  LevelScene.Load(ApplicationData('level/level-dungeon.x3d'));
+  LevelScene.Load('castle-data:/level/level-dungeon.x3d');
   LevelScene.Spatial := [ssRendering, ssDynamicCollisions];
   LevelScene.Attributes.PhongShading := true;
   Window.SceneManager.Items.Add(LevelScene);
@@ -124,13 +126,15 @@ begin
     Vector3(0.00, 1.00, 0.00) // gravity up
   );
 
-  SoundEngine.RepositoryURL := ApplicationData('audio/index.xml');
+  SoundEngine.RepositoryURL := 'castle-data:/audio/index.xml';
   SoundEngine.MusicPlayer.Sound := SoundEngine.SoundFromName('dark_music');
 end;
 
 initialization
   ApplicationProperties.ApplicationName := 'my_game';
   InitializeLog;
+  
+  Profiler.Enabled := true;
 
   Window := TCastleWindow.Create(Application);
   Application.MainWindow := Window;

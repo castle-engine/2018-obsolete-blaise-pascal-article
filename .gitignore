@@ -8,6 +8,8 @@ lib
 
 # output
 *.exe
+*.dll
+*.res
 3d_game/my_game
 3d_game_alternative_using_castlecontrol/my_game_castlecontrol
 3d_game_alternative_using_castlecontrol/my_game_castlecontrol.res
