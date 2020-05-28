@@ -7,4 +7,14 @@
     include sound libraries (OpenAL, OggVorbis).
   -->
   <android project_type="integrated"/>
+
+  <!--
+    Need to compile with threading,
+    to support music streaming, requested in data/audio/index.xml
+  -->
+  <compiler_options>
+    <custom_options>
+      <option>-dCASTLE_THREADS</option>
+    </custom_options>
+  </compiler_options>
 </project>
