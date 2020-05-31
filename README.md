@@ -6,6 +6,14 @@ The creation of this game will be described in great detail in the upcoming
 article about Castle Game Engine in
 [Blaise Pascal Magazine](https://www.blaisepascalmagazine.eu/).
 
+**This repository is obsolete**.
+While the example here still works perfectly, a better (remade) version is now distributed
+with the CGE engine, as a template _"3D FPS game"_ inside the [CGE visual editor](https://castle-engine.io/manual_editor.php).
+That new, remade version uses glTF for data (much better format to export from Blender)
+and designs the level using visual editor.
+Just download [the latest Castle Game Engine](https://castle-engine.io/),
+run the editor, choose _"New Project -> 3D FPS Game"_ as a template and run the project.
+
 # Compiling
 
 To compile the demo, you will need [Castle Game Engine](https://castle-engine.io/).
