@@ -19,11 +19,11 @@ pipeline {
         sh 'cd 3d_game/ && castle-engine compile'
       }
     }
-    stage('Compile CGE Lazarus packages (by lazbuild)') {
+    stage('Register CGE Lazarus packages (by lazbuild)') {
       steps {
-        sh 'lazbuild "${CASTLE_ENGINE_PATH}"/packages/castle_base.lpk'
-        sh 'lazbuild "${CASTLE_ENGINE_PATH}"/packages/castle_window.lpk'
-        sh 'lazbuild "${CASTLE_ENGINE_PATH}"/packages/castle_components.lpk'
+        sh 'lazbuild --add-package-link="${CASTLE_ENGINE_PATH}"/packages/castle_base.lpk'
+        sh 'lazbuild --add-package-link="${CASTLE_ENGINE_PATH}"/packages/castle_window.lpk'
+        sh 'lazbuild --add-package-link="${CASTLE_ENGINE_PATH}"/packages/castle_components.lpk'
       }
     }
     stage('Build TCastleWindowBase version (by lazbuild)') {
