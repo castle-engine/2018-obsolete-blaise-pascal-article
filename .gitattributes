@@ -1,0 +1,10 @@
+# See https://github.com/github/linguist about the linguist attributes.
+#
+# See https://help.github.com/en/articles/dealing-with-line-endings
+# about line endings.
+
+*.inc linguist-language=Pascal text eol=auto
+*.pas text eol=auto
+*.lpr text eol=auto
+*.lpk text eol=auto
+*.xml text eol=auto
