@@ -95,6 +95,11 @@ var
   I: Integer;
   TimeStart: TProcessTimerResult;
 begin
+  { This line is needed because CGE default of TCastleTransform.DefaultOrientation
+    is now adjusted to what Blender->glTF exporter does.
+    See https://github.com/castle-engine/castle-engine/wiki/Upgrading-to-Castle-Game-Engine-7.0 }
+  TCastleTransform.DefaultOrientation := otUpYDirectionMinusZ;
+
   Window.OnPress := @WindowPress;
 
   Window.Container.LoadSettings('castle-data:/CastleSettings.xml');
@@ -132,9 +137,6 @@ begin
 end;
 
 initialization
-  ApplicationProperties.ApplicationName := 'my_game';
-  InitializeLog;
-
   Profiler.Enabled := true;
 
   Window := TCastleWindow.Create(Application);

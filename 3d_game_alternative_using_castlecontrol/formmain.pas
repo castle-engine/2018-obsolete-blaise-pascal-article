@@ -84,6 +84,11 @@ begin
   ApplicationProperties.ApplicationName := 'my_game';
   InitializeLog;
 
+  { This line is needed because CGE default of TCastleTransform.DefaultOrientation
+    is now adjusted to what Blender->glTF exporter does.
+    See https://github.com/castle-engine/castle-engine/wiki/Upgrading-to-Castle-Game-Engine-7.0 }
+  TCastleTransform.DefaultOrientation := otUpYDirectionMinusZ;
+
   TimeStart := ProcessTimer;
 
   SoldierSceneTemplate := TCastleScene.Create(Application);
