@@ -21,9 +21,9 @@ pipeline {
     }
     stage('Register CGE Lazarus packages (by lazbuild)') {
       steps {
-        sh 'lazbuild --add-package-link="${CASTLE_ENGINE_PATH}"/packages/castle_base.lpk'
-        sh 'lazbuild --add-package-link="${CASTLE_ENGINE_PATH}"/packages/castle_window.lpk'
-        sh 'lazbuild --add-package-link="${CASTLE_ENGINE_PATH}"/packages/castle_components.lpk'
+        sh 'lazbuild --add-package-link "${CASTLE_ENGINE_PATH}"/packages/castle_base.lpk'
+        sh 'lazbuild --add-package-link "${CASTLE_ENGINE_PATH}"/packages/castle_window.lpk'
+        sh 'lazbuild --add-package-link "${CASTLE_ENGINE_PATH}"/packages/castle_components.lpk'
       }
     }
     stage('Build TCastleWindowBase version (by lazbuild)') {
