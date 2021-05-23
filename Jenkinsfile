@@ -38,7 +38,6 @@ pipeline {
     This should work out-of-the-box (ideally) with our Docker image,
     or at least be possible to workaround like above by "Build CGE Lazarus packages",
     but for now I failed.
-    */
 
     stage('Build TCastleWindowBase version (by lazbuild)') {
       steps {
@@ -50,6 +49,7 @@ pipeline {
         sh 'cd 3d_game_alternative_using_castlecontrol/ && lazbuild my_game.lpi'
       }
     }
+    */
   }
   post {
     regression {
