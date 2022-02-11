@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="my_game_castlecontrol"
+  lazarus_project="my_game_castlecontrol.lpi"
+  build_using_lazbuild="true"
+>
+</project>

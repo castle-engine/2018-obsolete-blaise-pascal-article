@@ -7,11 +7,12 @@ implementation
 
 uses Classes,
   CastleWindow, CastleScene, CastleFilesUtils, CastleKeysMouse, CastleUtils,
-  CastleVectors, CastleCameras, CastleStringUtils, CastleTransform,
+  CastleVectors, CastleCameras, CastleStringUtils, CastleTransform, CastleViewport,
   CastleApplicationProperties, CastleLog, CastleTimeUtils, CastleSoundEngine;
 
 var
   Window: TCastleWindow;
+  Viewport: TCastleViewport;
   LevelScene: TCastleScene;
 
 type
@@ -68,15 +69,15 @@ procedure WindowPress(Container: TUIContainer; const Event: TInputPressRelease);
 var
   HitEnemy: TEnemy;
 begin
-  if Event.IsMouseButton(mbLeft) then
+  if Event.IsMouseButton(buttonLeft) then
   begin
-    SoundEngine.Sound(SoundEngine.SoundFromName('shoot_sound'));
+    SoundEngine.Play(SoundEngine.SoundFromName('shoot_sound'));
 
-    if (Window.SceneManager.MouseRayHit <> nil) and
-       (Window.SceneManager.MouseRayHit.Count >= 2) and
-       (Window.SceneManager.MouseRayHit[1].Item is TEnemy) then
+    if (Viewport.MouseRayHit <> nil) and
+       (Viewport.MouseRayHit.Count >= 2) and
+       (Viewport.MouseRayHit[1].Item is TEnemy) then
     begin
-      HitEnemy := Window.SceneManager.MouseRayHit[1].Item as TEnemy;
+      HitEnemy := Viewport.MouseRayHit[1].Item as TEnemy;
       HitEnemy.SoldierScene.PlayAnimation('die', false);
       HitEnemy.SoldierScene.Pickable := false;
       HitEnemy.SoldierScene.Collides := false;
@@ -85,8 +86,7 @@ begin
   end;
 
   if Event.IsKey(CtrlM) then
-    Window.SceneManager.WalkCamera.MouseLook :=
-      not Window.SceneManager.WalkCamera.MouseLook;
+    Viewport.WalkNavigation.MouseLook := not Viewport.WalkNavigation.MouseLook;
 end;
 
 procedure ApplicationInitialize;
@@ -100,6 +100,10 @@ begin
     See https://github.com/castle-engine/castle-engine/wiki/Upgrading-to-Castle-Game-Engine-7.0 }
   TCastleTransform.DefaultOrientation := otUpYDirectionMinusZ;
 
+  Viewport := TCastleViewport.Create(Application);
+  Viewport.FullSize := true;
+  Window.Controls.InsertFront(Viewport);
+
   Window.OnPress := @WindowPress;
 
   Window.Container.LoadSettings('castle-data:/CastleSettings.xml');
@@ -110,7 +114,7 @@ begin
   begin
     Enemy := TEnemy.Create(Application);
     Enemy.Translation := Vector3(-5 + I * 1.5, 0, RandomFloatRange(-5, 5));
-    Window.SceneManager.Items.Add(Enemy);
+    Viewport.Items.Add(Enemy);
   end;
 
   WritelnLog('Loading enemies took %f seconds', [TimeStart.ElapsedTime]);
@@ -118,14 +122,14 @@ begin
   LevelScene := TCastleScene.Create(Application);
   LevelScene.Load('castle-data:/level/level-dungeon.x3d');
   LevelScene.Spatial := [ssRendering, ssDynamicCollisions];
-  LevelScene.Attributes.PhongShading := true;
-  Window.SceneManager.Items.Add(LevelScene);
+  LevelScene.RenderOptions.PhongShading := true;
+  Viewport.Items.Add(LevelScene);
 
-  Window.SceneManager.MainScene := LevelScene;
+  Viewport.Items.MainScene := LevelScene;
 
-  Window.SceneManager.NavigationType := ntWalk;
-  Window.SceneManager.WalkCamera.MoveSpeed := 10;
-  Window.SceneManager.WalkCamera.SetView(
+  Viewport.NavigationType := ntWalk;
+  Viewport.WalkNavigation.MoveSpeed := 10;
+  Viewport.Camera.SetView(
     Vector3(21.15, 1.71, 10.59), // position
     Vector3(-0.73, 0.00, -0.68), // direction
     Vector3(0.00, 1.00, 0.00), // up (current)
@@ -133,7 +137,7 @@ begin
   );
 
   SoundEngine.RepositoryURL := 'castle-data:/audio/index.xml';
-  SoundEngine.MusicPlayer.Sound := SoundEngine.SoundFromName('dark_music');
+  SoundEngine.LoopingChannel[0].Sound := SoundEngine.SoundFromName('dark_music');
 end;
 
 initialization
