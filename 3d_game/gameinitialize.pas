@@ -13,6 +13,7 @@ uses Classes,
 var
   Window: TCastleWindow;
   Viewport: TCastleViewport;
+  WalkNavigation: TCastleWalkNavigation;
   LevelScene: TCastleScene;
 
 type
@@ -86,7 +87,7 @@ begin
   end;
 
   if Event.IsKey(CtrlM) then
-    Viewport.WalkNavigation.MouseLook := not Viewport.WalkNavigation.MouseLook;
+    WalkNavigation.MouseLook := not WalkNavigation.MouseLook;
 end;
 
 procedure ApplicationInitialize;
@@ -127,13 +128,14 @@ begin
 
   Viewport.Items.MainScene := LevelScene;
 
-  Viewport.NavigationType := ntWalk;
-  Viewport.WalkNavigation.MoveSpeed := 10;
-  Viewport.Camera.SetView(
+  WalkNavigation := TCastleWalkNavigation.Create(Application);
+  WalkNavigation.MoveSpeed := 10;
+  Viewport.InsertFront(WalkNavigation);
+
+  Viewport.Camera.SetWorldView(
     Vector3(21.15, 1.71, 10.59), // position
     Vector3(-0.73, 0.00, -0.68), // direction
-    Vector3(0.00, 1.00, 0.00), // up (current)
-    Vector3(0.00, 1.00, 0.00) // gravity up
+    Vector3(0.00, 1.00, 0.00) // up (current)
   );
 
   SoundEngine.RepositoryURL := 'castle-data:/audio/index.xml';
