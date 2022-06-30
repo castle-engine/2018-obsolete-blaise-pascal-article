@@ -19,27 +19,16 @@ pipeline {
         sh 'cd 3d_game/ && castle-engine compile'
       }
     }
-    /*
     stage('Build CGE Lazarus packages (by lazbuild)') {
       steps {
-        sh 'lazbuild "${CASTLE_ENGINE_PATH}"/packages/castle_base.lpk'
-        sh 'lazbuild "${CASTLE_ENGINE_PATH}"/packages/castle_window.lpk'
-        sh 'lazbuild "${CASTLE_ENGINE_PATH}"/packages/castle_components.lpk'
-        // TODO: This fails with
-        // Write error: Unable to create file "/usr/local/castle-engine/packages/castle_base.pas"
-        // (that is correct, non-root cannot write there),
-        // regardless of using --add-package-link .
+        sh 'echo "Castle Game Engine in ${CASTLE_ENGINE_PATH}"'
+        sh 'lazbuild --add-package-link "${CASTLE_ENGINE_PATH}"src/vampyre_imaginglib/src/Packages/VampyreImagingPackage.lpk'
+        sh 'lazbuild --add-package-link "${CASTLE_ENGINE_PATH}"src/vampyre_imaginglib/src/Packages/VampyreImagingPackageExt.lpk'
+        sh 'lazbuild --add-package-link "${CASTLE_ENGINE_PATH}"packages/castle_base.lpk'
+        sh 'lazbuild --add-package-link "${CASTLE_ENGINE_PATH}"packages/castle_window.lpk'
+        sh 'lazbuild --add-package-link "${CASTLE_ENGINE_PATH}"packages/castle_components.lpk'
       }
     }
-    */
-    /*
-    TODO: Cannot compile lpi from Jenkins now, it says "castle_window"
-    dependency broken.
-    This should work out-of-the-box (ideally) with our Docker image,
-    or at least be possible to workaround like above by "Build CGE Lazarus packages",
-    but for now I failed.
-    */
-
     stage('Build TCastleWindow version (by lazbuild)') {
       steps {
         sh 'cd 3d_game/ && lazbuild my_game.lpi'
