@@ -16,7 +16,9 @@ pipeline {
   stages {
     stage('Build TCastleWindow version (by build tool)') {
       steps {
-        sh 'cd 3d_game/ && castle-engine compile'
+        dir ('3d_game/') {
+          sh 'castle-engine compile'
+        }
       }
     }
     stage('Build CGE Lazarus packages (by lazbuild)') {
@@ -31,12 +33,16 @@ pipeline {
     }
     stage('Build TCastleWindow version (by lazbuild)') {
       steps {
-        sh 'cd 3d_game/ && lazbuild my_game.lpi'
+        dir ('3d_game/') {
+          sh 'lazbuild my_game.lpi'
+        }
       }
     }
     stage('Build TCastleControl version (by lazbuild)') {
       steps {
-        sh 'cd 3d_game_alternative_using_castlecontrol/ && lazbuild my_game.lpi'
+        dir ('3d_game_alternative_using_castlecontrol/') {
+          sh 'lazbuild my_game_castlecontrol.lpi'
+        }
       }
     }
   }
