@@ -1,18 +1,28 @@
-# Example cross-platform 3D game using Castle Game Engine
+# (OBSOLETE) Example cross-platform 3D game using Castle Game Engine, for Blaise Pascal Magazine 2018 article
 
-Source code and data files (models, textures).
+This is the accompanying source code for the article _"Creating Games Using Castle Game Engine"_ published in 2018 in the [Blaise Pascal Magazine](https://www.blaisepascalmagazine.eu/). Source code and data files (models, textures).
 
-The creation of this game will be described in great detail in the upcoming
-article about Castle Game Engine in
-[Blaise Pascal Magazine](https://www.blaisepascalmagazine.eu/).
+This repository, as well as the corresponding article, are obsolete now, as of 2023. The article was nice back in 2018 -- it described the engine capabilities (as of 2018), presented how to develop a simple 3D application.
 
-**This repository is obsolete**.
-While the example here still works perfectly, a better (remade) version is now distributed
-with the CGE engine, as a template _"3D FPS game"_ inside the [CGE visual editor](https://castle-engine.io/manual_editor.php).
-That new, remade version uses glTF for data (much better format to export from Blender)
-and designs the level using visual editor.
-Just download [the latest Castle Game Engine](https://castle-engine.io/),
-run the editor, choose _"New Project -> 3D FPS Game"_ as a template and run the project.
+You can read it here:
+
+- (HTML) https://castle-engine.io/blaise-pascal-article/cge-article.html
+
+- (PDF) https://castle-engine.io/blaise-pascal-article/cge-article.pdf
+
+... but it is really obsolete, not a good guide to Castle Game Engine anymore.
+
+## Better: Use Castle Game Engine "3D FPS Game"
+
+Instead of this repository, you will have a better starting point if you use the template _"3D FPS game"_ inside the [CGE visual editor](https://castle-engine.io/manual_editor.php).
+
+That new, remade version uses glTF for data (much better format to export from Blender) and designs the level using visual editor.
+
+Just download [the latest Castle Game Engine](https://castle-engine.io/), run the editor, choose _"New Project -> 3D FPS Game"_ as a template and run the project.
+
+## Better: "Bad Chess", 2023 article and source code
+
+Another thing better than this repository is our 2023 article along with accompanying source code for "Blaise Pascal Magazine": [The bad way to play chess: 3D physics fun using Castle Game Engine](https://github.com/castle-engine/bad-chess/).
 
 # Compiling
 
