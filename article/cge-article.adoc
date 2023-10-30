@@ -7,6 +7,18 @@ Michalis Kamburelis
 :source-highlighter: coderay
 :docinfo1:
 
+## Obsolete warning!
+
+This article was nice back in 2018 -- it described the engine capabilities as of 2018. We grew a lot since then. Instead of this article, some better recommendations are now:
+
+- Read https://castle-engine.io/documentation.php[engine documentation].
+
+- Read https://github.com/castle-engine/bad-chess/[The bad way to play chess: 3D physics fun using Castle Game Engine]  article, also for _"Blaise Pascal Magazine"_, from 2023.
+
+- Explore the template _"3D FPS game"_ from the https://castle-engine.io/editor[CGE visual editor].
+
+Read on, to see how the engine looked like in 2018 :)
+
 ## Introduction
 
 Games are a powerful medium to tell stories. They can be as interactive as we want, and they can freely gather ideas from other arts. Books, music, graphics, they all can be mixed into something wonderful.
@@ -302,7 +314,7 @@ This is the code you can add at the end of `ApplicationInitialize`:
 [source,pascal]
 ----
 SoldierScene.ProcessEvents := true;
-SoldierScene.PlayAnimation('walk', paForceLooping);
+SoldierScene.PlayAnimation('walk', true);
 ----
 
 The 2nd parameter of `PlayAnimation` determines should the application repeat in a loop.
@@ -337,13 +349,13 @@ Window.OnPress := @WindowPress;
 procedure WindowPress(Container: TUIContainer; const Event: TInputPressRelease);
 begin
   if Event.IsKey('1') then
-    SoldierScene.PlayAnimation('walk', paForceLooping)
+    SoldierScene.PlayAnimation('walk', true)
   else
   if Event.IsKey('2') then
-    SoldierScene.PlayAnimation('stand', paForceLooping)
+    SoldierScene.PlayAnimation('stand', true)
   else
   if Event.IsKey('3') then
-    SoldierScene.PlayAnimation('die', paForceLooping);
+    SoldierScene.PlayAnimation('die', true);
 end;
 ----
 
@@ -374,7 +386,7 @@ begin
   SoldierScene := TCastleScene.Create(Application);
   SoldierScene.Load(ApplicationData('character/soldier1.castle-anim-frames'));
   SoldierScene.ProcessEvents := true;
-  SoldierScene.PlayAnimation('walk', paForceLooping);
+  SoldierScene.PlayAnimation('walk', true);
   Window.SceneManager.Items.Add(SoldierScene);
 
   LevelScene := TCastleScene.Create(Application);
@@ -616,7 +628,7 @@ begin
 
   SoldierScene := SoldierSceneTemplate.Clone(Self);
   SoldierScene.ProcessEvents := true;
-  SoldierScene.PlayAnimation('walk', paForceLooping);
+  SoldierScene.PlayAnimation('walk', true);
 
   Add(SoldierScene);
 end;
