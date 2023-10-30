@@ -1,16 +1,12 @@
-# (OBSOLETE) Example cross-platform 3D game using Castle Game Engine, for Blaise Pascal Magazine 2018 article
+# (OBSOLETE) Article and example cross-platform 3D game using Castle Game Engine, for Blaise Pascal Magazine 2018 article
 
-This is the accompanying source code for the article _"Creating Games Using Castle Game Engine"_ published in 2018 in the [Blaise Pascal Magazine](https://www.blaisepascalmagazine.eu/). Source code and data files (models, textures).
+This is the article and accompanying source code for the article _"Creating Games Using Castle Game Engine"_ published in 2018 in the [Blaise Pascal Magazine](https://www.blaisepascalmagazine.eu/).
+
+- Subdirectory `article`, more precisely the file `article/cge-article.adoc`, contains the article (in AsciiDoctor markup; GitHub will render it automatically).
+
+- `3d_game` and `3d_game_alternative_using_castlecontrol` contain the full source code (with data files -- models, textures).
 
 This repository, as well as the corresponding article, are obsolete now, as of 2023. The article was nice back in 2018 -- it described the engine capabilities (as of 2018), presented how to develop a simple 3D application.
-
-You can read it here:
-
-- (HTML) https://castle-engine.io/blaise-pascal-article/cge-article.html
-
-- (PDF) https://castle-engine.io/blaise-pascal-article/cge-article.pdf
-
-... but it is really obsolete, not a good guide to Castle Game Engine anymore.
 
 ## Better: Use Castle Game Engine "3D FPS Game"
 
