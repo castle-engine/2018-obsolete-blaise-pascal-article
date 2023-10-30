@@ -14,7 +14,7 @@ begin
   MoveDirection := -1;
 
   SoldierScene := TCastleScene.Create(Self);
-  SoldierScene.Load(ApplicationData('character/soldier1.castle-anim-frames'));
+  SoldierScene.Load('castle-data:/character/soldier1.castle-anim-frames');
   SoldierScene.ProcessEvents := true;
   SoldierScene.PlayAnimation('walk', paForceLooping);
 

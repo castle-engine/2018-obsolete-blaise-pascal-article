@@ -267,7 +267,7 @@ More complicated games often deal with scene manager in a more complicated way.
 
 It is best to place all your game data (models, textures, and everything else you may load) inside the `data` subdirectory of your project. This directory is a little special, as it will be automatically correctly packaged by the _build tool_ and available for your application on all platforms, including mobile Android and iOS. On Unix, the application data may also be installed system-wide.
 
-We have a special function `ApplicationData` (in the `CastleFilesUtils` unit) that allows to refer to the data files inside your project in a cross-platform, customizable way. Instead of
+We have a special URL protocol `castle-data:/` that allows to refer to the data files inside your project in a cross-platform, customizable way. Instead of
 
 [source,pascal]
 ----
@@ -278,20 +278,17 @@ you can write this:
 
 [source,pascal]
 ----
-SoldierScene.Load(ApplicationData('character/soldier1.castle-anim-frames'));
+SoldierScene.Load('castle-data:/character/soldier1.castle-anim-frames');
 ----
 
 This will work on all platforms.
 
-Note that `ApplicationData` is available in the unit `CastleFilesUtils`. You may need to add it to your `uses` clause.
-
-Using `ApplicationData` everywhere allows you to also customize the `data` directory location in the future, if needed.
-//Just set the `ApplicationDataOverride` global variable.
-Refer to the API reference of `ApplicationData` and `ApplicationDataOverride` for details -- how it is auto-detected, and how to customize it. More information about the `data` directory is in our manual: https://castle-engine.io/manual_data_directory.php .
+Using `castle-data:/` everywhere allows you to also customize the `data` directory location in the future, if needed.
+Refer to the API reference of `ApplicationDataOverride` for details -- how it is auto-detected, and how to customize it. More information about the `data` directory is in our manual: https://castle-engine.io/manual_data_directory.php .
 
 TIP: *There is no other directory name that is "special" for Castle Game Engine*. All other directory names you invent yourself, and organize your data and code however you like.
 
-TIP: Using `ApplicationData` is a good approach for typical games, that are distributed with a read-only game data. You do not _have_ to use it. For example a general 3D model viewer or editor can just open 3D models from any user-specified URL (like a file or HTTP resource), not only from `ApplicationData`.
+TIP: Using `castle-data:/` is a good approach for typical games, that are distributed with a read-only game data. You do not _have_ to use it. For example a general 3D model viewer or editor can just open 3D models from any user-specified URL (like a file or HTTP resource), not only from `castle-data:/`.
 
 ### Examine Camera
 
@@ -384,13 +381,13 @@ begin
   Window.OnPress := @WindowPress;
 
   SoldierScene := TCastleScene.Create(Application);
-  SoldierScene.Load(ApplicationData('character/soldier1.castle-anim-frames'));
+  SoldierScene.Load('castle-data:/character/soldier1.castle-anim-frames');
   SoldierScene.ProcessEvents := true;
   SoldierScene.PlayAnimation('walk', true);
   Window.SceneManager.Items.Add(SoldierScene);
 
   LevelScene := TCastleScene.Create(Application);
-  LevelScene.Load(ApplicationData('level/level-dungeon.x3d'));
+  LevelScene.Load('castle-data:/level/level-dungeon.x3d');
   Window.SceneManager.Items.Add(LevelScene);
 
   Window.SceneManager.MainScene := LevelScene;
@@ -613,7 +610,7 @@ Do it like this:
 [source,pascal]
 ----
 SoldierSceneTemplate := TCastleScene.Create(Application);
-SoldierSceneTemplate.Load(ApplicationData('character/soldier1.castle-anim-frames'));
+SoldierSceneTemplate.Load('castle-data:/character/soldier1.castle-anim-frames');
 ----
 
 . Change `TEnemy` constructor to use `SoldierSceneTemplate.Clone`:
@@ -711,7 +708,7 @@ Now you can initialize sounds inside `ApplicationInitialize` by loading this fil
 
 [source,pascal]
 ----
-SoundEngine.RepositoryURL := ApplicationData('audio/index.xml');
+SoundEngine.RepositoryURL := 'castle-data:/audio/index.xml';
 ----
 
 To play music simply set `SoundEngine.MusicPlayer.Sound`. You can do this from `ApplicationInitialize`, right after the line above:
