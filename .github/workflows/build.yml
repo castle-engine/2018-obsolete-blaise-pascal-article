@@ -59,6 +59,12 @@ jobs:
           path: "3d_game/*.apk"
           if-no-files-found: error
 
+      - name: Make Lazarus Packages Known
+        run: |
+          $CASTLE_ENGINE_PATH/packages/
+          lazbuild --add-package-link=castle_base.lpk
+          lazbuild --add-package-link=castle_window.lpk
+          lazbuild --add-package-link=castle_components.lpk
       - name: Test Compiling Using Lazarus (3d_game)
         run: cd 3d_game && lazbuild my_game.lpi
       - name: Test Compiling Using Lazarus (3d_game_alternative_using_castlecontrol)
