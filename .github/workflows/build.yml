@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------
 # GitHub Actions workflow to build this application.
 # Using latest Castle Game Engine ( https://castle-engine.io/ ) snapshot.
-# For multiple platforms (Linux, Windows).
+# For multiple platforms (Linux, Windows, Android).
 #
 # This uses GitHub-hosted runners, that is: you don't need to set up any server
 # infrastructure, GitHub provides it all for free for open-source projects.
