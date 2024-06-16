@@ -68,7 +68,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     # Only upload release if all builds, on all runners, succeeded.
-    needs: [build-using-docker, build-macos]
+    needs: [build-using-docker]
     steps:
     - name: Download packaged releases
       uses: actions/download-artifact@v4
