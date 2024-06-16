@@ -61,10 +61,10 @@ jobs:
 
       - name: Make Lazarus Packages Known
         run: |
-          $CASTLE_ENGINE_PATH/packages/
-          lazbuild --add-package-link=castle_base.lpk
-          lazbuild --add-package-link=castle_window.lpk
-          lazbuild --add-package-link=castle_components.lpk
+          cd "$CASTLE_ENGINE_PATH/packages/"
+          lazbuild --add-package-link castle_base.lpk
+          lazbuild --add-package-link castle_window.lpk
+          lazbuild --add-package-link castle_components.lpk
       - name: Test Compiling Using Lazarus (3d_game)
         run: cd 3d_game && lazbuild my_game.lpi
       - name: Test Compiling Using Lazarus (3d_game_alternative_using_castlecontrol)
