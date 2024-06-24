@@ -57,7 +57,7 @@ jobs:
         run: |
           cd 3d_game
           echo "$ANDROID_KEYSTORE" | base64 --decode > cge.keystore
-          echo "$ANDROID_SIGNING_PROPERTIES" | sed -e "s|WORKSPACE|${GITHUB_WORKSPACE}|" - > AndroidSigningProperties.txt
+          echo "$ANDROID_SIGNING_PROPERTIES" | sed -e "s|WORKSPACE|${GITHUB_WORKSPACE}/3d_game/|" - > AndroidSigningProperties.txt
       - name: Package Android
         run: cd 3d_game && castle-engine package --target=android --verbose
       - name: Archive Artifacts
